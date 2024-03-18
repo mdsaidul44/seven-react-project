@@ -1,5 +1,6 @@
 
 import './App.css'
+import Banner from './components/Banner/Banner'
 import Header from './components/Header/Header'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       {/* header section */}
       <Header></Header>
+      <Banner></Banner>
       {/* cart description section */}
       <div className='text-center '>
         <h1 className='text-4xl font-bold mb-6'>Our Recipes</h1>

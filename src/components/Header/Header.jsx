@@ -2,8 +2,8 @@
 
 const Header = () => {
     return (
-        <div className="flex justify-between mx-10 p-8 items-center">
-            <h1 className="text-3xl font-extrabold">Recipe Calories</h1>
+        <div className="flex justify-between mx-20 p-8 items-center">
+            <h1 className="text-4xl  font-extrabold">Recipe Calories</h1>
             <div className="flex gap-10 text-slate-500 font-medium">
                 <a href="">Home</a>
                 <a href="">Recipes</a>
