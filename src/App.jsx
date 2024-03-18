@@ -1,6 +1,7 @@
 
 import './App.css'
 import Banner from './components/Banner/Banner'
+import Cards from './components/Cards/Cards'
 import Header from './components/Header/Header'
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
       </div>
       {/* cart section */}
       <div>
-
+      <Cards></Cards>
       </div>
 
     </>
