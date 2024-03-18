@@ -1,12 +1,24 @@
- 
-import './App.css'
 
-function App() { 
+import './App.css'
+import Header from './components/Header/Header'
+
+function App() {
 
   return (
-    <> 
-      <h1>Hello world</h1>
-       
+    <>
+      {/* header section */}
+      <Header></Header>
+      {/* cart description section */}
+      <div className='text-center '>
+        <h1 className='text-4xl font-bold mb-6'>Our Recipes</h1>
+        <p className='text-slate-500 font-medium w-2/4 mx-auto  '>Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget
+          urna volutpat curabitur elementum mauris aenean neque.</p>
+      </div>
+      {/* cart section */}
+      <div>
+
+      </div>
+
     </>
   )
 }
