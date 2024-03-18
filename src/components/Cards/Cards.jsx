@@ -1,31 +1,33 @@
- import pasta from '../../assets/image/pasta.jpg'
+//  import pasta from '../../assets/image/pasta.jpg'
 
-const Cards = () => {
+import { useEffect } from "react";
+import { useState } from "react";
+import Card from "../Card/Card";
+
+const Cards = ({ handleAddToCook }) => {
+    const [cards, setCard] = useState([])
+    useEffect(() => {
+        fetch('cart.json')
+            .then(res => res.json())
+            .then(data => setCard(data))
+    })
     return (
-        <div>
-            <div>
-                <div className='border-4 h-2/3 p-8 w-96 rounded-xl bg-slate-100'>
-                    <img className='w-72 rounded-xl' src={pasta} alt="" />
-                    <h1 className='text-xl font-bold'>Spaghetti Bolognese</h1>
-                    <p className='text-slate-500'>Classic Italian pasta dish with savory meat sauce.</p>
-                    <h1 className='font-bold'>Ingredients: 6</h1>
-                    <ol className='text-slate-500 ml-4'>
-                        <li>500g ground beef </li>
-                        <li>1 onion, chopped</li>
-                        <li>2 cloves garlic, minced</li>
-                    </ol>
-                    <div className='flex gap-8 '>
-                        <p>30 minutes</p>
-                        <p>600 calories</p>
-                    </div>
-                    <button className='h-10 w-28 rounded-full bg-green-600 font-bold m-4'><small>Want to Cook</small></button>
-                </div> 
-                <div>
-
+        <div className='m-24'>
+            <div className='flex justify-between'>
+                <div className="grid gap-8 grid-cols-2">
+                    {
+                        cards.map(card => <Card
+                            key={card.id}
+                            card={card}
+                            handleAddToCook={handleAddToCook}
+                        ></Card>)
+                    }
                 </div>
             </div>
         </div>
     );
 };
+
+Cards.propTypes
 
 export default Cards;
