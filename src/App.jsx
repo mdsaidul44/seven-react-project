@@ -11,6 +11,8 @@ import Header from './components/Header/Header'
 
 function App() { 
   const [cart ,setCart] = useState([])
+  // const [cooking, setCooking] = useState([])
+
     const handleAddToCook =(p) =>{
       const isExist = cart.find(item=> item.recipe_id == p.recipe_id)
       // console.log(isExist)
@@ -27,6 +29,10 @@ function App() {
     const handleRemove =(id)=>{
       const newCart = cart.filter(items=>items.recipe_id !== id)
       setCart(newCart)
+    }
+
+    const handleAddToCooking =(p) =>{
+      console.log(p)
     }
 
   return (
@@ -63,7 +69,10 @@ function App() {
                     <p className='lg:w-12'>{item.recipe_name}</p>
                     <p className=''>{item.preparing_time}</p>
                     <p>{item.Calories}</p>
-                    <button onClick={()=>handleRemove(item.recipe_id)} className='h-10 w-24 rounded-full bg-green-600 '>Preparing</button>
+                    <button onClick={()=>{
+                      handleRemove(item.recipe_id)
+                      handleAddToCooking(cart)
+                      }} className='h-10 w-24 rounded-full bg-green-600 '>Preparing</button>
                   </div >
                     )
                 } 
