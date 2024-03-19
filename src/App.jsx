@@ -1,39 +1,41 @@
-  
-  import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-  
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import { useState } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
 import Cards from './components/Cards/Cards'
-import Header from './components/Header/Header' 
+import Header from './components/Header/Header'
 
-function App() { 
-  const [cart ,setCart] = useState([])
-  // const [cooking, setCooking] = useState([])
+function App() {
+  const [cart, setCart] = useState([])
+  const [cooking, setCooking] = useState([])
 
-    const handleAddToCook =(p) =>{
-      const isExist = cart.find(item=> item.recipe_id == p.recipe_id)
-      // console.log(isExist)
-      if(!isExist){
-        setCart([...cart,p])
-      }else{
-        toast('Already data loaded')
-      }
-      //  const newCart = [...cart,p]
-       
+  const handleAddToCook = (p) => {
+    const isExist = cart.find(item => item.recipe_id == p.recipe_id)
+    // console.log(isExist)
+    if (!isExist) {
+      setCart([...cart, p])
+    } else {
+      toast('Already data loaded')
     }
-//  console.log(cart)
+    //  const newCart = [...cart,p]
 
-    const handleRemove =(id)=>{
-      const newCart = cart.filter(items=>items.recipe_id !== id)
-      setCart(newCart)
-    }
+  }
+  //  console.log(cart)
 
-    const handleAddToCooking =(p) =>{
-      console.log(p)
-    }
+  const handleRemove = (id) => {
+    const newCart = cart.filter(items => items.recipe_id !== id)
+    setCart(newCart)
+  }
+
+  const handleAddToCooking = (cooker) => {
+    const newCooking = [...cooking,cooker]
+    setCooking(newCooking)
+  }
+console.log(cooking)
 
   return (
     <>
@@ -63,27 +65,39 @@ function App() {
               </div>
               <div>
                 {
-                  cart.map((item,index)=>
-                  <div key={index} className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl'>
-                    <p className='mt-8'>{index+1}</p>
-                    <p className='lg:w-12'>{item.recipe_name}</p>
-                    <p className=''>{item.preparing_time}</p>
-                    <p>{item.Calories}</p>
-                    <button onClick={()=>{
-                      handleRemove(item.recipe_id)
-                      handleAddToCooking(cart)
+                  cart.map((item, index) =>
+                    <div key={index} className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl'>
+                      <p className='mt-8'>{index + 1}</p>
+                      <p className='lg:w-12'>{item.recipe_name}</p>
+                      <p className=''>{item.preparing_time}</p>
+                      <p>{item.Calories}</p>
+                      <button onClick={() => {
+                        handleRemove(item.recipe_id)
+                        handleAddToCooking(item)
                       }} className='h-10 w-24 rounded-full bg-green-600 '>Preparing</button>
-                  </div >
-                    )
-                } 
+                    </div >
+                  )
+                }
               </div>
               <div>
-                <h1 className='text-2xl font-bold my-8'>Currently cooking: {length}</h1>
+                <h1 className='text-2xl font-bold my-8'>Currently cooking: {cooking.length}</h1>
                 <div className='flex justify-around mt-4 text-slate-500 font-bold'>
-                <p className=''>Name</p>
-                <p className=''>Time</p>
-                <p className='mr-16'>Calories</p> 
-              </div> 
+                  <p>Name</p>
+                  <p>Time</p>
+                  <p>Calories</p>
+                </div>
+                <div>
+                  {
+                    cooking.map((cook,index) => 
+                      <div key={index} className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl' >
+                        <p >{index + 1}</p>
+                      <p >{cook.recipe_name}</p>
+                      <p>{cook.preparing_time}</p>
+                      <p>{cook.Calories}</p> 
+                      </div>
+                    )
+                  }
+                </div>
               </div>
             </div>
           </div>
@@ -93,5 +107,5 @@ function App() {
     </>
   )
 }
- 
+
 export default App
