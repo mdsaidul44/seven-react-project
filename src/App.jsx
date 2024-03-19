@@ -19,6 +19,12 @@ function App() {
        
     }
 //  console.log(cart)
+
+    const handleRemove =(id)=>{
+      const newCart = cart.filter(items=>items.recipe_id !== id)
+      setCart(newCart)
+    }
+
   return (
     <>
       {/* header section */}
@@ -31,13 +37,13 @@ function App() {
           urna volutpat curabitur elementum mauris aenean neque.</p>
       </div>
       {/* cart section */}
-      <div className='flex'>
+      <div className='lg:flex'>
         <div>
           <Cards handleAddToCook={handleAddToCook}></Cards>
         </div>
         {/* even handler data */}
         <div>
-          <div className='border-4 rounded-xl mt-24 w-[500px]'>
+          <div className='border-4 rounded-xl mt-24 lg:w-[500px]'>
             <div className='text-center p-4'>
               <h1 className='text-2xl font-bold mb-4'>Want to cook:{cart.length}</h1>
               <hr />
@@ -49,18 +55,23 @@ function App() {
               <div>
                 {
                   cart.map((item,index)=>
-                  <div  className='flex justify-around mt-4 font-semibold gap-10 bg-gray-100 p-4 rounded-2xl'>
+                  <div  className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl'>
                     <p>{index+1}</p>
-                    <p className='w-12'>{item.recipe_name}</p>
+                    <p className='lg:w-12'>{item.recipe_name}</p>
                     <p className=''>{item.preparing_time}</p>
                     <p>{item.Calories}</p>
-                    <button className='h-10 w-24 rounded-full bg-green-600 '>Preparing</button>
+                    <button onClick={()=>handleRemove(item.recipe_id)} className='h-10 w-24 rounded-full bg-green-600 '>Preparing</button>
                   </div >
                     )
                 } 
               </div>
               <div>
-                <h1></h1>
+                <h1 className='text-2xl font-bold my-8'>Currently cooking: {length}</h1>
+                <div className='flex justify-around mt-4 text-slate-500 font-bold'>
+                <p className=''>Name</p>
+                <p className=''>Time</p>
+                <p className='mr-16'>Calories</p> 
+              </div> 
               </div>
             </div>
           </div>
@@ -70,5 +81,5 @@ function App() {
     </>
   )
 }
-
+ 
 export default App

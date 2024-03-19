@@ -12,9 +12,9 @@ const Cards = ({ handleAddToCook }) => {
             .then(data => setCard(data))
     })
     return (
-        <div className='ml-24 mt-24 mr-4'>
+        <div className='lg:ml-24 mt-24 mr-4'>
             <div className='flex justify-between'>
-                <div className="grid gap-8 grid-cols-2">
+                <div className="grid lg:gap-8 lg:grid-cols-2">
                     {
                         cards.map(card => <Card
                             key={card.id}
