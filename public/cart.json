@@ -4,9 +4,7 @@
       "recipe_name": "Basil Chicken Stir-Fry",
       "short_description": "A delicious and aromatic stir-fry with tender chicken and fresh basil.",
       "Ingredients": [
-        {"chicken": "550 g",
-        "soy_sauce": "120 ml",
-        "basil_leaf": "200 g"}
+       "chicken 400g","soy sauce 100 ml","basil leaf 70g"
       ],
       "preparing_time": "30 minutes",
       "Calories": "320 calories",
@@ -17,9 +15,7 @@
       "recipe_name": "Mushroom Soy Stir-Fry",
       "short_description": "A savory stir-fry featuring mushrooms with a soy-based sauce.",
       "Ingredients": [
-       { "chicken": " 450 g",
-        "soy_sauce": "100 ml",
-        "basil_leaf": " 150 g"}
+        "chicken 350g","soy sauce 120 ml","basil leaf 150g"  
       ],
       "preparing_time": "25 minutes",
       "Calories": "280 calories",
@@ -30,9 +26,7 @@
       "recipe_name": "Basil Mushroom Chicken",
       "short_description": "Tender chicken combined with fresh basil and savory mushrooms.",
       "Ingredients": [
-        { "chicken": "500 g",
-        "soy_sauce": "110 ml",
-        "basil_leaf": " 180 g"} 
+        "chicken 500g","soy sauce 110 ml","basil leaf 180g" 
       ],
       "preparing_time": "28 minutes",
       "Calories": "300 calories",
@@ -43,9 +37,7 @@
       "recipe_name": "Soy Basil Chicken",
       "short_description": "A delightful blend of soy-infused chicken with fragrant basil.",
       "Ingredients": [
-        { "chicken": "520 g",
-        "soy_sauce": "115 ml",
-        "basil_leaf": " 380 g"}  
+        "chicken 520g","soy sauce 150 ml","basil leaf 250g" 
       ],
       "preparing_time": "32 minutes",
       "Calories": "330 calories",
@@ -56,9 +48,7 @@
       "recipe_name": "Basil Mushroom Stir-Fry",
       "short_description": "A flavorsome stir-fry featuring basil and earthy mushrooms.",
       "Ingredients": [
-        { "chicken": "540 g",
-        "soy_sauce": "125 ml",
-        "basil_leaf": " 220 g"} 
+        "chicken 470g","soy sauce 170 ml","basil leaf 180g"
       ],
       "preparing_time": "35 minutes",
       "Calories": "350 calories",
@@ -69,9 +59,7 @@
       "recipe_name": "Chicken Mushroom Stir-Fry",
       "short_description": "A hearty stir-fry featuring tender chicken and earthy mushrooms.",
       "Ingredients": [
-        { "chicken": "530 g",
-        "soy_sauce": "122 ml",
-        "basil_leaf": " 205 g"}  
+        "chicken 300g","soy sauce 160 ml","basil leaf 350g"
       ],
       "preparing_time": "33 minutes",
       "Calories": "340 calories",

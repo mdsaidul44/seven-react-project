@@ -1,4 +1,8 @@
-   
+  
+  import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  
+
 import { useState } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
@@ -13,7 +17,7 @@ function App() {
       if(!isExist){
         setCart([...cart,p])
       }else{
-        alert('already exist')
+        toast('Already data loaded')
       }
       //  const newCart = [...cart,p]
        
@@ -33,8 +37,7 @@ function App() {
       {/* cart description section */}
       <div className='text-center '>
         <h1 className='text-4xl font-bold mb-6'>Our Recipes</h1>
-        <p className='text-slate-500 font-medium lg:w-2/4 mx-auto  '>Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus vulputate netus pharetra rhoncus. Eget
-          urna volutpat curabitur elementum mauris aenean neque.</p>
+        <p className='text-slate-500 font-medium lg:w-2/4 mx-auto  '>A commis is a basic chef in larger kitchens who works under a chef de partie to learn the stations or ranges responsibilities and operation. This may be a chef who has recently completed formal culinary training or is still undergoing training.</p>
       </div>
       {/* cart section */}
       <div className='lg:flex'>
@@ -56,7 +59,7 @@ function App() {
                 {
                   cart.map((item,index)=>
                   <div  className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl'>
-                    <p>{index+1}</p>
+                    <p className='mt-8'>{index+1}</p>
                     <p className='lg:w-12'>{item.recipe_name}</p>
                     <p className=''>{item.preparing_time}</p>
                     <p>{item.Calories}</p>
@@ -77,7 +80,7 @@ function App() {
           </div>
         </div>
       </div>
-
+      <ToastContainer></ToastContainer>
     </>
   )
 }

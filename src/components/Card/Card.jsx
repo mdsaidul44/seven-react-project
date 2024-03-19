@@ -1,5 +1,6 @@
 
-
+import time from '../../assets/image/time.jpg'
+import calories from '../../assets/image/calories.jpg'
 
 
 const Card = ({ card, handleAddToCook }) => {
@@ -11,17 +12,24 @@ const Card = ({ card, handleAddToCook }) => {
                 <h1 className='text-xl font-bold mt-4'>{recipe_name}</h1>
                 <p className='text-slate-500'>{short_description}</p>
                 <h1 className='font-bold'>Ingredients: 6</h1>
-                <ul className='text-slate-500 ml-4 my-4'>
+                <ol className='text-slate-500 ml-4 my-4'>
                     {
-                        Ingredients.slice(0, 3).map((Ingredient, idx) =>
-                            <li key={idx}>Sround beef{Ingredient.chicken}</li>
+                        Ingredients.map((Ingredient, idx) =>
+                            <li key={idx}>{Ingredient}</li> 
+
                         )
 
                     }
-                </ul>
+                </ol>
                 <div className='flex gap-8 '>
+                    <div className='flex gap-2'>
+                    <img className='h-4 w-4 mt-1' src={time} alt="" />
                     <p> {preparing_time}</p>
+                    </div>
+                    <div className='flex gap-2'>
+                    <img className='h-5 ' src={calories} alt="" />
                     <p>{Calories}</p>
+                    </div>
                 </div>
                 <button onClick={() => handleAddToCook(card)} className='h-10 w-28 rounded-full bg-green-600 font-bold m-4'><small>Want to Cook</small></button>
             </div>
