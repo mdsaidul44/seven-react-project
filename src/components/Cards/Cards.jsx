@@ -12,7 +12,7 @@ const Cards = ({ handleAddToCook }) => {
             .then(data => setCard(data))
     })
     return (
-        <div className='m-24'>
+        <div className='ml-24 mt-24 mr-4'>
             <div className='flex justify-between'>
                 <div className="grid gap-8 grid-cols-2">
                     {

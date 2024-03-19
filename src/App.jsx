@@ -1,15 +1,24 @@
    
+import { useState } from 'react'
 import './App.css'
 import Banner from './components/Banner/Banner'
 import Cards from './components/Cards/Cards'
 import Header from './components/Header/Header' 
 
 function App() { 
-
+  const [cart ,setCart] = useState([])
     const handleAddToCook =(p) =>{
-       console.log(p)
+      const isExist = cart.find(item=> item.recipe_id == p.recipe_id)
+      // console.log(isExist)
+      if(!isExist){
+        setCart([...cart,p])
+      }else{
+        alert('already exist')
+      }
+      //  const newCart = [...cart,p]
+       
     }
-
+//  console.log(cart)
   return (
     <>
       {/* header section */}
@@ -28,17 +37,30 @@ function App() {
         </div>
         {/* even handler data */}
         <div>
-          <div className='border-4 rounded-xl mt-24 w-[450px]'>
+          <div className='border-4 rounded-xl mt-24 w-[500px]'>
             <div className='text-center p-4'>
-              <h1 className='text-2xl font-bold mb-4'>Want to cook: 01</h1>
+              <h1 className='text-2xl font-bold mb-4'>Want to cook:{cart.length}</h1>
               <hr />
               <div className='flex justify-around mt-4 text-slate-500 font-bold'>
-                <p>Name</p>
-                <p>Time</p>
-                <p>Calories</p>
+                <p className=''>Name</p>
+                <p className=''>Time</p>
+                <p className='mr-16'>Calories</p>
               </div>
               <div>
- 
+                {
+                  cart.map((item,index)=>
+                  <div  className='flex justify-around mt-4 font-semibold gap-10 bg-gray-100 p-4 rounded-2xl'>
+                    <p>{index+1}</p>
+                    <p className='w-12'>{item.recipe_name}</p>
+                    <p className=''>{item.preparing_time}</p>
+                    <p>{item.Calories}</p>
+                    <button className='h-10 w-24 rounded-full bg-green-600 '>Preparing</button>
+                  </div >
+                    )
+                } 
+              </div>
+              <div>
+                <h1></h1>
               </div>
             </div>
           </div>
