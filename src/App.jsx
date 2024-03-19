@@ -58,7 +58,7 @@ function App() {
               <div>
                 {
                   cart.map((item,index)=>
-                  <div  className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl'>
+                  <div key={index} className='flex justify-around mt-4 font-semibold lg:gap-10 bg-gray-100 p-4 rounded-2xl'>
                     <p className='mt-8'>{index+1}</p>
                     <p className='lg:w-12'>{item.recipe_name}</p>
                     <p className=''>{item.preparing_time}</p>
